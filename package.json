@@ -1,0 +1,32 @@
+{
+  "name": "react-gitignore",
+  "version": "1.0.0",
+  "description": "Quick .gitignore file for your react project",
+  "main": "src/index.js",
+  "bin": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "create-react-app",
+    "react",
+    "next",
+    "gatsby",
+    "gitignore",
+    "quick-gitignore"
+  ],
+  "author": "Estiak Ahmmed",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^6.5.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/merin83/react-gitignore.git"
+  },
+  "bugs": {
+    "url": "https://github.com/merin83/react-gitignore/issues"
+  },
+  "homepage": "https://github.com/merin83/react-gitignore#readme"
+}
