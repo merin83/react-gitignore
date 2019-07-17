@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const inquirer = require('inquirer');
 const fs = require('fs');
+const path = require('path');
 
 (async () => {
   const { option } = await inquirer.prompt([
@@ -13,9 +14,11 @@ const fs = require('fs');
   ]);
   if (option) {
     const cwd = process.cwd();
+    const srcPath = path.resolve(__dirname, 'src/config/.gitignore');
     console.log(cwd, 'which path it is');
-    fs.copyFile(`${cwd}/src/config/.gitignore`, `${cwd}/.gitignore`, err => {
+    fs.copyFile(srcPath, `${cwd}/.gitignore`, err => {
       if (err) {
+        console.log(srcPath, 'srcPath');
         console.log(
           'Please Make sure you have Node version 8.5 or higher installed on your system'
         );
