@@ -1,6 +1,6 @@
 {
   "name": "react-gitignore",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Quick .gitignore file for your react project",
   "main": "src/index.js",
   "bin": "src/index.js",

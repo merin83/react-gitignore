@@ -13,19 +13,16 @@ const fs = require('fs');
   ]);
   if (option) {
     const cwd = process.cwd();
-    fs.copyFile(
-      'src/config/.gitignore',
-      `${cwd}/.gitignore`,
-      err => {
-        if (err) {
-          console.log(
-            'Make sure you have Node version 8.5 or higher installed on your system'
-          );
-          throw err;
-        }
-        console.log('.gitignore successfully created');
+    console.log(cwd, 'which path it is');
+    fs.copyFile(`${cwd}/src/config/.gitignore`, `${cwd}/.gitignore`, err => {
+      if (err) {
+        console.log(
+          'Please Make sure you have Node version 8.5 or higher installed on your system'
+        );
+        throw err;
       }
-    );
+      console.log('.gitignore successfully created');
+    });
   } else {
     console.log(`.gitignore creation failed choose 'y' to create it`);
   }
