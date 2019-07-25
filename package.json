@@ -1,6 +1,6 @@
 {
   "name": "react-gitignore",
-  "version": "1.0.8",
+  "version": "1.0.12",
   "description": "Quick .gitignore file for your react project",
   "main": "src/index.js",
   "bin": "src/index.js",
@@ -18,6 +18,7 @@
   "author": "Estiak Ahmmed",
   "license": "MIT",
   "dependencies": {
+    "fs-extra": "^8.1.0",
     "inquirer": "^6.5.0"
   },
   "devDependencies": {},

@@ -1,4 +1,4 @@
-
+const gitignoreContent = `
 # dependencies
 /node_modules
 /.pnp
@@ -41,3 +41,6 @@ yarn-error.log*
 /.changelog
 .npm/
 dist
+`;
+
+module.exports = gitignoreContent;

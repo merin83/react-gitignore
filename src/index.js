@@ -1,7 +1,51 @@
 #!/usr/bin/env node
 const inquirer = require('inquirer');
 const fs = require('fs');
-const path = require('path');
+
+const gitignoreContent = `
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.next
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# If Packages have their independent repo
+# /packages
+
+# ignore log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.idea/
+.vscode/
+node_modules/
+build
+.DS_Store
+*.tgz
+my-app*
+template/src/__tests__/__snapshots__/
+lerna-debug.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/.changelog
+.npm/
+dist
+`;
 
 (async () => {
   const { option } = await inquirer.prompt([
@@ -14,18 +58,8 @@ const path = require('path');
   ]);
   if (option) {
     const cwd = process.cwd();
-    const srcPath = path.resolve(__dirname, 'src/config/.gitignore');
-    console.log(cwd, 'which path it is');
-    fs.copyFile(srcPath, `${cwd}/.gitignore`, err => {
-      if (err) {
-        console.log(srcPath, 'srcPath');
-        console.log(
-          'Please Make sure you have Node version 8.5 or higher installed on your system'
-        );
-        throw err;
-      }
-      console.log('.gitignore successfully created');
-    });
+    fs.writeFileSync(`${cwd}/.gitignore`, gitignoreContent);
+    console.log('.gitignore successfully created');
   } else {
     console.log(`.gitignore creation failed choose 'y' to create it`);
   }
